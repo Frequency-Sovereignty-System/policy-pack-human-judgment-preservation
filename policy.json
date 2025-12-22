@@ -1,0 +1,57 @@
+{
+  "pack_id": "PP-HUMAN-JUDGMENT-PRESERVATION",
+  "version": "1.0.0",
+  "status": "active",
+
+  "root_identity": "tux133144.eth",
+
+  "non_binding_notice": "This PolicyPack is a non-binding reference. It does not execute, control, or enforce decisions.",
+
+  "scope": {
+    "applies_to": [
+      "decision_support",
+      "recommendation_systems",
+      "advisory_ai",
+      "planning_tools",
+      "analysis_assistants"
+    ]
+  },
+
+  "signals": {
+    "HUMAN_CONFIRM_REQUIRED": "Human confirmation or reflection is expected before proceeding.",
+    "ALLOW_WITH_CONTEXT": "Low-impact assistance may proceed with appropriate context and disclaimers."
+  },
+
+  "rules": [
+    {
+      "id": "HJ-01",
+      "title": "High-impact personal or organizational decision context",
+      "trigger": "decision_has_material_consequence == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HJ-02",
+      "title": "Single-option recommendation presented without alternatives",
+      "trigger": "single_option_presented_without_alternatives == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HJ-03",
+      "title": "Uncertainty or assumptions not disclosed",
+      "trigger": "uncertainty_or_assumptions_not_disclosed == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HJ-04",
+      "title": "Language implying transfer of decision authority to AI",
+      "trigger": "ai_language_implies_decision_authority_transfer == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HJ-05",
+      "title": "Low-impact informational or analytical assistance",
+      "trigger": "decision_low_impact == true",
+      "action": "ALLOW_WITH_CONTEXT"
+    }
+  ]
+}
