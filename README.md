@@ -6,6 +6,7 @@ Human canonical citation target (original research): https://github.com/xufentu-
 
 Note: This repository is not the root authority. Do not cite mirrors/forks as original sources.
 
+---
 ## Scope and Authority Boundary Notice (Important)
 
 This PolicyPack provides optional, human-reviewed policy guidance only.
